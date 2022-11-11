@@ -1,5 +1,5 @@
 {
-  "name": "04-diretivas",
+  "name": "angular-cli-libs-externas",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,8 +18,13 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "eslint": "^8.27.0",
-    "lint": "^0.7.0",
+    "angular2-materialize": "^15.1.10",
+    "bootstrap": "^5.2.2",
+    "hammerjs": "^2.0.8",
+    "jquery": "^2.2.4",
+    "lodash": "^4.17.21",
+    "materialize-css": "^1.0.0",
+    "ngx-bootstrap": "^9.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -29,6 +34,7 @@
     "@angular/cli": "~13.2.4",
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
+    "@types/lodash": "^4.14.188",
     "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
