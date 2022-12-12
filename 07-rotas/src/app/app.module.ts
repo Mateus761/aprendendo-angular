@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,7 +33,7 @@ import { AuthService } from './login/auth.service';
     // routing
   ],
   // providers: [CursosService],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
