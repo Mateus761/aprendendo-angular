@@ -31,7 +31,8 @@
     </div>
 
     
-   
+    <div ngModelGroup="endereco">
+
     <div class="form-group" class="row" style="margin-top: 20px;">
 
         <div class="col-md-3">
@@ -90,6 +91,8 @@
             #estado="ngModel" [ngClass]="aplicaCssErro(estado)">
             <app-campo-control-erro [mostrarErro]="verificaValidTouched(estado)" msgErro="Estado é obrigatório."></app-campo-control-erro>
         </div>
+
+     </div>
 
      </div>
     
