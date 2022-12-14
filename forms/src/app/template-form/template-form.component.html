@@ -24,5 +24,6 @@
     </div>
    
 
-    <button type="submit" class="btn btn-primary" style="margin-top: 1rem">Submit</button>
+    <button type="submit" class="btn btn-primary" style="margin-top: 1rem"
+        [disabled]="!f.valid">Submit</button>
 </form>
