@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs';
 
 @Component({
@@ -22,9 +22,11 @@ export class DataFormComponent implements OnInit {
     // });
 
     this.formulario = this.formBuilder.group({
-      nome: [null],
-      email: [null]
+      nome: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]]
     })
+
+    // [Validators.required, Validators.minLength(3), Validators.maxLength(20)]
 
   }
 
@@ -37,7 +39,7 @@ export class DataFormComponent implements OnInit {
         console.log(dados);
         // reseta o form
         // this.formulario.reset();
-        this.resetar();
+        // this.resetar();
       },
       (error: any) => alert('erro'))
   }
