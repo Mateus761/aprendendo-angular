@@ -39,7 +39,7 @@ export class DataFormComponent implements OnInit {
         console.log(dados);
         // reseta o form
         // this.formulario.reset();
-        // this.resetar();
+        this.resetar();
       },
       (error: any) => alert('erro'))
   }
@@ -47,5 +47,22 @@ export class DataFormComponent implements OnInit {
   resetar() {
     this.formulario.reset();
   }
+
+  aplicaCssErro(campo: any) {
+    return {
+      'is-invalid': this.verificaValidTouched(campo)
+      }
+  }
+
+    verificaValidTouched(campo: any) {
+      return !this.formulario.get(campo)?.valid && !!this.formulario.get(campo)?.touched
+  }
+
+  verificaEmailInvalido() {
+    let campoEmail = this.formulario.get('email')
+    if (campoEmail?.errors) {
+      return campoEmail.errors['email'] && campoEmail.touched;
+    }
+}
 
 }
