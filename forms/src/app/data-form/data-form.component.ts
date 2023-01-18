@@ -1,3 +1,5 @@
+import { EstadoBr } from './../shared/models/EstadoBr';
+import { DropdownService } from './../shared/services/dropdown.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -11,10 +13,17 @@ import { map } from 'rxjs';
 export class DataFormComponent implements OnInit {
 
   formulario!: FormGroup;
+  estados!: EstadoBr[];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private dropdownService: DropdownService) { }
 
   ngOnInit(): void {
+
+    this.dropdownService.getEstadosBr()
+      .subscribe((res: EstadoBr) => this.estados.push(res))
 
     // this.formulario = new FormGroup({
     //   nome: new FormControl(null),
@@ -79,7 +88,7 @@ export class DataFormComponent implements OnInit {
       }
     })
 
-  
+
   }
 
   resetar() {
@@ -154,12 +163,12 @@ resetaDadosForm() {
       complemento: null,
       bairro: null,
       cidade: null,
-      estado: null 
+      estado: null
     }
   })
 };
 
-  
+
 
 }
 
